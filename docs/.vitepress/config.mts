@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Basalt",
   description: "A CC:Tweaked UI Framework",
+  base: '/basalt-docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
