@@ -18,11 +18,11 @@ hero:
       link: /guides
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: User friendly
+    details: Basalt's intuitive interface makes UI design a breeze, even for beginners. Experience seamless integration without the steep learning curve.
+  - title: High Performance
+    details: Designed with efficiency in mind, Basalt ensures smooth and responsive interfaces, even for the most complex applications.
+  - title: Modular Design
+    details: With a rich set of objects and modules, Basalt allows you to craft custom experiences, scaling up or down based on your needs.
 ---
 

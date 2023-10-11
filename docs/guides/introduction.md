@@ -4,19 +4,23 @@ outline: deep
 
 # Introduction to Basalt
 
-Basalt is a powerful and flexible user interface (UI) framework designed to make it easy for developers to create visually appealing and interactive applications. This guide will provide an overview of Basalt, its main components, and the basic concepts and terminology used in the framework.
+Welcome to Basalt, a dedicated UI framework tailored for the ComputerCraft environment. At its core, Basalt's primary goal is to simplify and streamline the process of creating user interfaces within ComputerCraft's unique landscape.
 
-## Main Components of Basalt
+## What is Basalt?
 
-Basalt consists of several key components that work together to create a seamless user interface experience. Some of the main components include:
+Basalt is a set of tools and utilities that, when combined, provides a foundation for building interactive applications within the ComputerCraft universe. Instead of starting from scratch each time you want to craft an interface, Basalt offers a collection of pre-designed components like buttons, sliders, and text fields.
 
-1. Objects: Basalt objects represent the various UI elements that make up an application’s interface. Examples of objects include frames, buttons, text fields, and more. Each object comes with a set of properties and methods that allow you to customize its appearance and behavior.
+## The Strengths of Basalt
 
-2. Frames: Frames are the primary containers for organizing and laying out UI objects in Basalt. They can be nested, allowing for complex and hierarchical layouts. Basalt provides different types of frames, such as basic frames, movable frames, scrollable frames, and flexboxes, each with their own unique properties and use cases.
+- **Performance:** One of Basalt's defining attributes is its performance capabilities. Designed with optimization in mind, it ensures your applications run smoothly.
+- **Complexity Handled:** With Basalt, creating complex applications doesn't mean starting complex. The framework provides a scaffold upon which you can build, handling many of the nitty-gritty details, so you can focus on your application's unique needs.
 
-3. Events: Events are triggered by user interactions, such as clicks, keypresses, and other inputs. Basalt provides an event handling system that allows you to easily respond to these events and update your application’s interface or behavior accordingly.
+## When to Use (or Not Use) Basalt
 
-4. Threading: Basalt supports the use of threads in applications, enabling concurrent actions and background processes to run without blocking the main program.
+Basalt shines brightest when your project requires a refined, interactive user interface. If you're aiming to build applications that are complex and interactive, Basalt is your go-to.
 
-This introduction should give you a basic understanding of Basalt and its main components. As you continue to explore the framework and its features, you’ll gain a deeper understanding of how to create and customize your own applications.
+However, for very basic projects, say, an application with a singular function and a single button, you might find that integrating a whole framework like Basalt may be more than you need. Always evaluate the scope and requirements of your project before diving in.
 
+## Behind the Scenes
+
+Without getting too technical right out of the gate, it's worth noting that Basalt operates by managing a series of event listeners and handlers. This means, in the background, it's continuously listening for user interactions and responding in real-time. This dynamic approach is part of what allows Basalt to offer such a responsive and interactive user experience.
