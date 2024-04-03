@@ -89,20 +89,15 @@ export default defineConfig({
               ]},
               {text: 'Button', link: 'references/button'},
               {text: 'Checkbox', link: 'references/checkbox'},
-              {text: 'Image', link: 'references/image'},
               {text: 'Input', link: 'references/input'},
               {text: 'Label', link: 'references/label'},
               {text: 'List', link: 'references/list',
               items: [
                 {text: 'Dropdown', link: 'references/dropdown'},
-                {text: 'Radio', link: 'references/Radio'},
                 {text: 'Menubar', link: 'references/Menubar'},
-
-
               ]},
               {text: 'Program', link: 'references/program'},
               {text: 'Progressbar', link: 'references/progressbar'},
-              {text: 'Scrollbar', link: 'references/scrollbar'},
               {text: 'Slider', link: 'references/slider'},
               {text: 'Textfield', link: 'references/textfield'},
             ]
