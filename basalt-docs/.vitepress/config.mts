@@ -6,7 +6,7 @@ export default defineConfig({
   description: "A CC:Tweaked UI Framework",
   lang: 'en-US',
   lastUpdated: true,
-  base: "basalt-docs",
+  base: "/basalt-docs/",
 
   head: [
     //[
