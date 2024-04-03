@@ -1,20 +1,25 @@
----
-outline: deep
----
-
 # Program
 
-Program objects allow you to execute other programs within your main application. You can run programs such as worms, shell, or any custom programs you’ve created.
+The Program element facilitates launching and managing programs within basalt windows.
+
+Program inherit from [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
 |Property|Type|Description|
 |---|---|---|
-|program|object|The internal program object
+|program|object|Contains a Basalt Program object.
 
-## start
+## Methods
 
-Starts a existing program
+|Method|Returns|Description|
+|---|---|---|
+|[start](#start)|self|Starts the program.
+|[stop](#stop)|self|Stops the program.
+
+## start <C content="start"/>
+
+Initiates the execution of the program.
 
 ### Parameters
 
@@ -22,13 +27,33 @@ Starts a existing program
 
 ### Returns
 
-1. `object` The object in use
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aProgram = mainFrame:addProgram()
+local mainFrame = basalt.getMainFrame()
+local program = mainFrame:addProgram()
 
-aProgram:start("path/to/your/program.lua")
+program:start("path/to/your/program.lua")
 ```
+:::
+
+## stop <C content="stop"/>
+
+Terminates the execution of the program.
+
+### Returns
+
+1. `self`
+
+::: details Click to see example
+```lua
+local mainFrame = basalt.getMainFrame()
+local program = mainFrame:addProgram()
+
+program:start("path/to/your/program.lua")
+program:onClick(function(self)
+    self:stop()
+end)
+```
+:::

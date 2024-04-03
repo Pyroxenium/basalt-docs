@@ -1,10 +1,8 @@
----
-outline: deep
----
-
 # Textfield
 
 Textfields are objects that allow users to write text in multiple lines, similar to the default edit script.
+
+Textfield inherit from [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
@@ -20,14 +18,16 @@ Textfields are objects that allow users to write text in multiple lines, similar
 
 Here’s a simple example showcasing how to instantiate a Textfield object within the Basalt framework:
 
+::: details Click to see example
 ```lua
-local main = basalt.createFrame()
-local aTextfield = main:addTextfield()
+local main = basalt.getMainFrame()
+local textfield = main:addTextfield()
 
--- User writes text into the Textfield
--- ...
-
--- Retrieve the text from the Textfield
-local allText = table.concat(aTextfield.lines, "\n")
-basalt.debug(allText)
+main:addButton({x=20, y=2, text="Confirm"}):onClick(function()
+    local text = textfield:getLines()
+    for _,line in ipairs(text)do
+        basalt.debug(line)
+    end
+end)
 ```
+:::

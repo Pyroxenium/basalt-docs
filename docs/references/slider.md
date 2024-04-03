@@ -1,19 +1,17 @@
----
-outline: deep
----
-
 # Slider
 
-Sliders are objects that allow users to scroll vertically or horizontally, which in turn changes a value that you can access using the :getValue() method.
+Sliders are interactive elements that allow users to select a value within a specified range by dragging a knob along a track.
+
+Slider inherit from [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
 |Property|Type|Description|
 |---|---|---|
-|knobSymbol|char|The character used to represent the knob on the slider.
+|knobSymbol|string|The character used to represent the knob on the slider.
 |knobBackground|color|Background color of the knob.
 |knobForeground|color|Foreground color of the knob.
-|bgSymbol|color|The character used to represent the slider's background track.
+|bgSymbol|string|The character used to represent the slider's background track.
 |value|number|The current value the slider is set to.
 |minValue|number|The minimum value the slider can be set to.
 |maxValue|number|The maximum value the slider can be set to.
@@ -21,10 +19,9 @@ Sliders are objects that allow users to scroll vertically or horizontally, which
 
 ## Example
 
-Here's a demonstration of how to create and utilize a Slider object within the Basalt framework:
-
+::: details Click to see example
 ```lua
-local main = basalt.createFrame()
+local main = basalt.getMainFrame()
 local aSlider = main:addSlider()
 
 -- Set properties for the slider
@@ -38,5 +35,4 @@ aSlider:onChange(function()
     basalt.debug("The current value of the slider is: " .. selectedValue)
 end)
 ```
-
-n this example, when a user moves the slider, its value changes in increments of 5, and the selected value is printed out.
+:::

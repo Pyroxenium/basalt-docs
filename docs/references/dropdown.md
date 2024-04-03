@@ -1,27 +1,25 @@
----
-outline: deep
----
-
 # Dropdown
 
-Dropdowns are objects where the user can click on a button, which opens a list from which the user can choose an item.
+Dropdowns are interactive elements that provide users with a selection of options. When activated, by clicking on a button, a list of items appears, allowing the user to choose one.
+
+Dropdown inherit from [List](list), [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
 |Property|Type|Description|
 |---|---|---|
-|opened|bool|Indicates if the dropdown list is currently visible
-|dropdownHeight|number|The maximum height of the dropdown list when opened
-|dropdownWidth|number|The width of the dropdown list
+|opened|bool|Indicates if the dropdown list is currently visible.
+|dropdownHeight|number|The maximum height of the dropdown list when opened.
+|dropdownWidth|number|The width of the dropdown list.
 
 ## Example
 
-The following example demonstrates how to create a Dropdown object:
-
+::: details Click to see example
 ```lua
 local main = basalt.addFrame()
-local myDropdown = main:addDropdown()
+local dropdown = main:addDropdown()
 
 -- Adding items to the dropdown
-myDropdown:setItems({"Option 1", "Option 2", "Option 3"})
+dropdown:setItems({"Option 1", "Option 2", "Option 3"})
 ```
+:::

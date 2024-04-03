@@ -1,27 +1,43 @@
----
-outline: deep
----
-
 # List
 
-Lists are objects that allow you to create a collection of entries from which the user can make a selection.
+Lists are interactive elements in Basalt used for displaying a collection of items in a vertical layout. They allow users to select items from the list and trigger actions associated with them.
+
+List inherit from [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
 |Property|Type|Description|
 |---|---|---|
-|items|table|A collection of entries to be displayed in the list
-|selectedIndex|number|he index of the currently selected item in the list
-|selectionBackground|color|Background color of the selected item
-|selectionForeground|color|Foreground/text color of the selected item
-|scrollIndex|number|Indicates the first visible item in a scrollable list
+|items|table|A collection of entries to be displayed in the list.
+|itemsForeground|table|A collection of foreground colors for each entry in the list.
+|itemsBackground|table|A collection of background colors for each entry in the list.
+|selection|boolean|Enables or disables the possibility to select items.
+|multiSelection|boolean|Indicates whether multiple items can be selected in the list.
+|autoScroll|boolean|Indicates whether the list automatically scrolls to keep the newest entry visible.
+|selectedIndex|number|The index of the currently selected item in the list.
+|selectionBackground|color|The background color of the selected item in the list.
+|selectionForeground|color|The foreground/text color of the selected item in the list.
+|scrollIndex|number|The scrolling offset of the list.
+
+## Methods
+
+|Method|Returns|Description|
+|---|---|---|
+|[addItem](#additem)|self|Adds an item to the list.
+|[removeItem](#removeitem)|self|Removes an item from the list.
+|[removeItemByIndex](#removeitem)|self|Removes an item from the list by index.
+|[selectItem](#selectitem)|self|Selects an item in the list.
+|[selectItemByIndex](#selectitembyindex)|self|Selects an item in the list by index.
+|[getSelectedItems](#getselecteditems)|table|Returns a table containing the selected items in the list.
+|[clear](#clear)|self|Removes all items from the list.
+|[updateColor](#updatecolor)|self|Updates the color of a item.
+|[getSelectionState](#getselectionstate)|boolean|Returns the selection state of the item at the given index.
 
 ## Example
 
-Here's an example showcasing how to create a List object, populate it with items, and retrieve the selected item:
-
+::: details Click to see example
 ```lua
-local main = basalt.addFrame()
+local main = basalt.getMainFrame()
 local myList = main:addList()
 
 -- Adding items to the list
@@ -31,136 +47,201 @@ myList:setItems({"Item 1", "Item 2", "Item 3", "Item 4"})
 local selectedItem = myList.items[myList.selectedIndex]
 basalt.debug(selectedItem)
 ```
+:::
 
-## addItem
+## addItem <C content="addItem"/>
 
-Adds a item into the list.
-
-### Parameters
-
-1. `string` The entry name
-
-### Returns
-
-1. `object` The object in use
-
-### Usage
-
-```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-```
-
-## removeItem
-
-Removes an item from the list
+Adds an item to the list.
 
 ### Parameters
 
-1. `string` The name of the item
+1. `string` The item to add to the list
 
 ### Returns
 
-1. `object` The object in use
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-aList:removeItem("2. Entry")
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
 ```
+:::
 
-## removeItemByIndex
+## removeItem <C content="removeItem"/>
 
-Removes an item from the list by its id
+Removes an item from the list.
 
 ### Parameters
 
-1. `number` The id of the item
+1. `string` The name of the item.
 
 ### Returns
 
-1. `object` The object in use
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-aList:removeItemByIndex(2)
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
+list:removeItem("2. Entry")
 ```
+:::
 
-## selectItem
+## removeItemByIndex <C content="removeItemByIndex"/>
 
-Selects an item from the list
+Removes an item from the list by its index.
 
 ### Parameters
 
-1. `string` The name of the item
+1. `number` The index of the item to remove
 
 ### Returns
 
-1. `object` The object in use
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-aList:selectItem("2. Entry")
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
+list:removeItemByIndex(2)
 ```
+:::
 
-## selectItemByIndex
+## selectItem <C content="selectItem"/>
 
-Selects an item from the list by its id
+Selects an item in the list.
 
 ### Parameters
 
-1. `number` The id of the item
+1. `string` The item to select.
 
 ### Returns
 
-1. `object` The object in use
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-aList:selectItemByIndex(2)
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
+list:selectItem("2. Entry")
 ```
+:::
 
-## getSelectedItem
+## selectItemByIndex <C content="selectItemByIndex"/>
 
-Returns the currently selected item
+Selects an item in the list by its index.
+
+### Parameters
+
+1. `number` The index of the item to select.
 
 ### Returns
 
-1. `string` The name of the item
+1. `self`
 
-### Usage
-
+::: details Click to see example
 ```lua
-local mainFrame = basalt.addFrame()
-local aList = mainFrame:addList()
-aList:addItem("1. Entry")
-aList:addItem("2. Entry")
-aList:addItem("3. Entry")
-basalt.debug(aList:getSelectedItem())
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
+list:selectItemByIndex(2)
 ```
+:::
+
+## getSelectedItems <C content="getSelectedItems"/>
+
+Returns a table containing the selected items in the list.
+
+### Returns
+
+1. `table` A table containing the selected items.
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("1. Entry")
+list:addItem("2. Entry")
+list:addItem("3. Entry")
+basalt.debug(list:getSelectedItem()[1])
+```
+:::
+
+## clear <C content="clear"/>
+
+Removes all items from the list.
+
+### Returns
+
+1. `self`
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("Item 1")
+list:addItem("Item 2")
+list:clear()
+```
+:::
+
+## updateColor <C content="updateColor"/>
+
+Updates the color of an item in the list.
+
+### Parameters
+
+1. `number` The index of the item to change.
+1. `color` The foreground color.
+1. `color` The background color.
+
+### Returns
+
+1. `self`
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("Item 1")
+list:updateColor(1, colors.red, colors.blue)
+```
+:::
+
+## getSelectionState <C content="getSelectionState"/>
+
+Returns the selection state of the item at the given index.
+
+### Parameters
+
+1. `number` The index of the item.
+
+### Returns
+
+1. `boolean` if the item is currently selected or not.
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list = main:addList()
+list:addItem("Item 1")
+list:addItem("Item 2")
+local selectionState = list:getSelectionState(1)
+basalt.debug(selectionState)
+```
+:::

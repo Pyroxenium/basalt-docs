@@ -1,23 +1,21 @@
----
-outline: deep
----
-
 # Menubar
 
-Menubars are similar to lists but are displayed horizontally instead of vertically. They are ideal for creating user interfaces like taskbars in operating systems, as they can be scrollable, allowing for endless entries.
+Menubars are similar to lists but are displayed horizontally instead of vertically. They are ideal for creating user interfaces like taskbars in operating systems.
+
+Dropdown inherit from [List](list), [VisualElement](visualelement) and [BasicElement](element)
 
 ## Properties
 
 |Property|Type|Description|
 |---|---|---|
-|spacing|number|Determines the space between each entry
+|spacing|number|Determines the space between each entry.
 
 ## Example
 
-Here's a simple example to help you get started with creating a Menubar:
-
+::: details Click to see example
 ```lua
 local main = basalt.addFrame()
-local aMenubar = main:addMenubar()
-aMenubar:addItems({"File", "Edit", "View", "Help"})
+local menubar = main:addMenubar()
+menubar:addItems({"File", "Edit", "View", "Help"})
 ```
+:::
