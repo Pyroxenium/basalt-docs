@@ -1,2 +1,2 @@
-# basalt-docs
+# docs
 Basalts documentation
