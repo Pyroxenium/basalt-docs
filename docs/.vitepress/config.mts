@@ -50,7 +50,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/home' },
-      { text: 'Guides', link: '/guides/' },
+      { text: 'Guides', link: '/guides/getting-started' },
       { text: 'References', link: '/references/main' },
     ],
 
@@ -62,11 +62,11 @@ export default defineConfig({
     sidebar: {
       '/guides/': [
         {
-          text: 'Getting Started',
+          text: 'Getting Started',link: 'guides/getting-started',
           items: [
-            { text: 'Home', link: '/guide/' },
-            { text: 'One', link: '/guide/one' },
-            { text: 'Two', link: '/guide/two' }
+            { text: 'Download', link: '/guides/download' },
+            { text: 'Properties', link: '/guides/properties' },
+            { text: 'Dynamic Values', link: '/guides/dynamicvalues' }
           ]
         }
       ],
