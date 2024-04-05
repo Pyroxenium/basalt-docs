@@ -2,7 +2,7 @@
 
 The Program element facilitates launching and managing programs within basalt windows.
 
-Program inherit from [VisualElement](visualelement) and [BasicElement](element)
+Program inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

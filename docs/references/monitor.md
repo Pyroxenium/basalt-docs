@@ -4,7 +4,7 @@ Monitors are special containers in Basalt designed for interaction with the peri
 
 Monitors have specific properties and behaviors that differentiate them from other containers. They are intended exclusively for use with the [Monitor](https://tweaked.cc/peripheral/monitor.html) peripheral device and only function with it.
 
-Monitor inherit from [Container](container), [VisualElement](visualelement) and [BasicElement](element)
+Monitor inherit from [Container](container), [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

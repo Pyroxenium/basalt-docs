@@ -4,7 +4,7 @@ Base frames are fundamental elements in Basalt, typically the first element you 
 
 It's important to note that only one base frame can be active (visible) at a time. While you can create multiple base frames, only the currently active one listens to incoming events (except for some events like time-events and peripheral-events). To switch between BaseFrames, you can use [basalt.switchFrame](basalt.html#basalt-switchframe)
 
-Baseframe inherit from [Container](container), [VisualElement](visualelement) and [BasicElement](element)
+Baseframe inherit from [Container](container), [VisualElement](visualelement) and [Element](element)
 
 ## Example
 

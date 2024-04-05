@@ -2,7 +2,7 @@
 
 Frames are elements in Basalt used for organizing user interfaces. Unlike BaseFrames, Frames always require a parent container.
 
-Frame inherit from [Container](container), [VisualElement](visualelement) and [BasicElement](element)
+Frame inherit from [Container](container), [VisualElement](visualelement) and [Element](element)
 
 ## Example
 

@@ -2,7 +2,7 @@
 
 Unlike the standard Monitor, BigMonitor has the capability to render across multiple monitors, simulating a single expansive display.
 
-BigMonitor inherit from [Container](container), [VisualElement](visualelement) and [BasicElement](element)
+BigMonitor inherit from [Container](container), [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

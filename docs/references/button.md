@@ -2,7 +2,7 @@
 
 Buttons are interactive elements in Basalt that users can click on to trigger actions or events. They are commonly used to initiate commands, submit forms, or navigate through interfaces.
 
-Button inherit from [VisualElement](visualelement) and [BasicElement](element)
+Button inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

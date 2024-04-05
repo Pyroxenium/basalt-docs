@@ -2,7 +2,7 @@
 
 Textfields are objects that allow users to write text in multiple lines, similar to the default edit script.
 
-Textfield inherit from [VisualElement](visualelement) and [BasicElement](element)
+Textfield inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

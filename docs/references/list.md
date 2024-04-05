@@ -2,7 +2,7 @@
 
 Lists are interactive elements in Basalt used for displaying a collection of items in a vertical layout. They allow users to select items from the list and trigger actions associated with them.
 
-List inherit from [VisualElement](visualelement) and [BasicElement](element)
+List inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

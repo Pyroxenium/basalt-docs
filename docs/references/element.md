@@ -1,8 +1,8 @@
-# BasicElement
+# Element
 
-The BasicElement class is the fundamental building block class in Basalt, from which all other elements are derived. You can think of it as the “origin” of all elements within the framework. The BasicElement class provides essential functions that are common to all derived elements, such as adding and removing event listeners and managing inheritance and relationships between elements.
+The Element class is the fundamental building block class in Basalt, from which all other elements are derived. You can think of it as the “origin” of all elements within the framework. The Element class provides essential functions that are common to all derived elements, such as adding and removing event listeners and managing inheritance and relationships between elements.
 
-In simple terms, the BasicElement class is like a common ancestor that passes down basic functions and properties to all subsequent elements. This makes it easier to keep the behavior of elements throughout the framework consistent and predictable.
+In simple terms, the Element class is like a common ancestor that passes down basic functions and properties to all subsequent elements. This makes it easier to keep the behavior of elements throughout the framework consistent and predictable.
 
 ## Properties
 |Property|Type|Description|

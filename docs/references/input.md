@@ -2,7 +2,7 @@
 
 Input elements allow users to enter text or data. They are commonly used in forms and text entry fields to gather user input.
 
-Input inherit from [VisualElement](visualelement) and [BasicElement](element)
+Input inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

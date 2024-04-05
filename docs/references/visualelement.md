@@ -2,7 +2,7 @@
 
 The VisualElement class is derived from the Element class and serves as the foundation for all visual components in Basalt. VisualElements include elements like frames, buttons, label's or input fields. The VisualElement class provides methods for managing the appearance, position, size, and other general visual properties of these elements.
 
-VisualElement inherit from [BasicElement](element)
+VisualElement inherit from [Element](element)
 
 ## Properties
 

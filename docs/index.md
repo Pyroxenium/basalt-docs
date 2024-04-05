@@ -15,7 +15,7 @@ hero:
       link: guides/getting-started
     - theme: alt
       text: References
-      link: /references/main
+      link: /references/elements
     - theme: alt
       text: Github
       link: https://github.com/Pyroxenium/Basalt/tree/basalt2

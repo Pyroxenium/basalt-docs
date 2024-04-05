@@ -2,7 +2,7 @@
 
 Progress bars are visual elements used to indicate the progress of a task or operation. They provide visual feedback to users about the completion status of a process.
 
-Progressbar inherit from [VisualElement](visualelement) and [BasicElement](element)
+Progressbar inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

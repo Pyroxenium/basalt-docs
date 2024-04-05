@@ -2,7 +2,7 @@
 
 Container is the base class for all frame types. It provides the basic structure and functionality for all frame elements. Container elements can contain other container elements, thus forming the foundation for the hierarchy of frame elements.
 
-Container inherit from [VisualElement](visualelement) and [BasicElement](element)
+Container inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

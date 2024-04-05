@@ -1,10 +1,6 @@
 # Welcome to The Basalt Wiki
 
-*Note: The Basalt Wiki is a work in progress. Please treat wiki errors the same as bugs and report them accordingly.*
-
 Basalt is a user-friendly UI framework for CC:Tweaked (also known as "ComputerCraft: Tweaked") - a popular Minecraft mod. It was developed to enhance user interaction through visual displays. In this wiki, you'll find information on how to use Basalt as well as examples of functional Basalt code.
-
-This Website is made with the help of ChatGPT.
 
 ## About Basalt
 
@@ -15,6 +11,8 @@ Basalt is an easy-to-understand UI framework designed to improve user interactio
 - A powerful event handling system for managing user input and interaction.
 - Support for multiple screen resolutions and aspect ratios.
 - Extensive documentation and examples to help users get started quickly.
+
+If you want to learn more about basalt, check out our [Guides](/guides/getting-started) page. To learn more about Basalt's API you can also check out the [References](/references/main) page.
 
 ## Quick Demo
 

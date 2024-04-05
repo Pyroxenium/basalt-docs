@@ -2,7 +2,7 @@
 
 Dropdowns are interactive elements that provide users with a selection of options. When activated, by clicking on a button, a list of items appears, allowing the user to choose one.
 
-Dropdown inherit from [List](list), [VisualElement](visualelement) and [BasicElement](element)
+Dropdown inherit from [List](list), [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

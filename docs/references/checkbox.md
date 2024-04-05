@@ -2,7 +2,7 @@
 
 Checkboxes are interactive elements in Basalt that allow users to select or deselect options. They are commonly used in forms and settings menus to indicate whether a particular option is enabled or disabled.
 
-Checkbox inherit from [VisualElement](visualelement) and [BasicElement](element)
+Checkbox inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

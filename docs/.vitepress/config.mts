@@ -66,48 +66,61 @@ export default defineConfig({
           items: [
             { text: 'Download', link: '/guides/download' },
             { text: 'Properties', link: '/guides/properties' },
-            { text: 'Dynamic Values', link: '/guides/dynamicvalues' }
           ]
         }
       ],
 
       '/references/':[
-      {
-        text: 'References', link: 'references/main',
-        items: [
-          {text: 'Basalt', link: 'references/basalt'},
-          {text: 'BasicElement', link: 'references/element',
+        {
+          text: 'References', link: 'references/main',
           items: [
-            {text: 'VisualElement', link: 'references/visualelement',    
+            {text: 'Basalt', link: 'references/basalt'},
+            {text: 'Element', link: 'references/element',
             items: [
-              {text: 'Container', link: 'references/container',
+              {text: 'VisualElement', link: 'references/visualelement',    
               items: [
-                {text: 'Baseframe', link: 'references/baseframe'},
-                {text: 'Frame', link: 'references/frame'},
-                {text: 'Monitor', link: 'references/monitor'},
-                {text: 'BigMonitor', link: 'references/bigmonitor'},
-              ]},
-              {text: 'Button', link: 'references/button'},
-              {text: 'Checkbox', link: 'references/checkbox'},
-              {text: 'Input', link: 'references/input'},
-              {text: 'Label', link: 'references/label'},
-              {text: 'List', link: 'references/list',
-              items: [
-                {text: 'Dropdown', link: 'references/dropdown'},
-                {text: 'Menubar', link: 'references/Menubar'},
-              ]},
-              {text: 'Program', link: 'references/program'},
-              {text: 'Progressbar', link: 'references/progressbar'},
-              {text: 'Slider', link: 'references/slider'},
-              {text: 'Textfield', link: 'references/textfield'},
+                {text: 'Container', link: 'references/container',
+                items: [
+                  {text: 'Baseframe', link: 'references/baseframe'},
+                  {text: 'Frame', link: 'references/frame'},
+                  {text: 'Monitor', link: 'references/monitor'},
+                  {text: 'BigMonitor', link: 'references/bigmonitor'},
+                ]},
+                {text: 'Button', link: 'references/button'},
+                {text: 'Checkbox', link: 'references/checkbox'},
+                {text: 'Input', link: 'references/input'},
+                {text: 'Label', link: 'references/label'},
+                {text: 'List', link: 'references/list',
+                items: [
+                  {text: 'Dropdown', link: 'references/dropdown'},
+                  {text: 'Menubar', link: 'references/menubar'},
+                ]},
+                {text: 'Program', link: 'references/program'},
+                {text: 'Progressbar', link: 'references/progressbar'},
+                {text: 'Slider', link: 'references/slider'},
+                {text: 'Textfield', link: 'references/textfield'},
+              ]
+              },
+              
             ]
             },
-          ]
-          },
-      ]
+            {text: 'Extensions', link: 'references/extensions',
+            items: [
+              {text: 'Dynamic Values', link: 'references/dynamicvalues'},
+              {text: 'Template', link: 'references/template'},
+              {text: 'Animations', link: 'references/animations'},
+              {text: 'Borders', link: 'references/borders'},
+              {text: 'Better Backgrounds', link: 'references/betterbackgrounds'},
+              {text: 'Shadows', link: 'references/shadows'},
+              {text: 'Scrollbars', link: 'references/scrollbars'},
+              {text: 'Debug', link: 'references/debug'},
+              {text: 'XML', link: 'references/xml'},
+            ]
+            },
+        ]
+        },
+      ],
       },
-    ],
-    },
 
 
     socialLinks: [

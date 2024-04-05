@@ -2,7 +2,7 @@
 
 Menubars are similar to lists but are displayed horizontally instead of vertically. They are ideal for creating user interfaces like taskbars in operating systems.
 
-Dropdown inherit from [List](list), [VisualElement](visualelement) and [BasicElement](element)
+Dropdown inherit from [List](list), [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

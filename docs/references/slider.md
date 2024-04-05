@@ -2,7 +2,7 @@
 
 Sliders are interactive elements that allow users to select a value within a specified range by dragging a knob along a track.
 
-Slider inherit from [VisualElement](visualelement) and [BasicElement](element)
+Slider inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 

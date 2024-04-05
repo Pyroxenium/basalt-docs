@@ -2,7 +2,7 @@
 
 Labels are non-interactive elements in Basalt used for displaying text. They are commonly used to provide descriptions, headings, or instructions within user interfaces. By default a label uses the parent background and foreground color.
 
-Label inherit from [VisualElement](visualelement) and [BasicElement](element)
+Label inherit from [VisualElement](visualelement) and [Element](element)
 
 ## Properties
 
