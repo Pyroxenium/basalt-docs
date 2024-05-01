@@ -1,17 +1,17 @@
 # Download
 
-Basalt is available in two project versions: the source version, ideal for debugging errors and featuring annotations with a LLS and a proper code editor, and the packaged version, which is more compact.
+Basalt is available in two project versions: the source version, ideal for debugging errors and featuring annotations with a LLS for a proper code editor, and the packaged version, which is more compact.
 
-::: info
-The one-file version is no longer supported and is unlikely to return.
+:::tip
+The domain link will change once the new version of basalt is fully released!
 :::
 
-## Downloading Basalt with UI
+## Downloading Basalt
 
 To download the Basalt UI using a CC shell command, use the following:
 
 ```
-wget run https://basalt.madefor.cc/install.lua
+wget run https://pyroxenium.github.io/basalt-docs/install.lua
 ```
 
 This method provides a convenient way to modify Basalt according to your specific needs by utilizing a UI.
@@ -25,15 +25,7 @@ If you want to skip the UI and just download the essentials, here are some other
 This is the default source version of Basalt, containing essential files for a UI framework.
 
 ```
-wget run https://basalt.madefor.cc/install.lua source default
-```
-
-- ### Packaged Default
-
-This is the default packaged version of Basalt, containing essential files for a UI framework.
-
-```
-wget run https://basalt.madefor.cc/install.lua packaged default
+wget run https://pyroxenium.github.io/basalt-docs/install.lua source default
 ```
 
 - ### Source Full
@@ -41,15 +33,23 @@ wget run https://basalt.madefor.cc/install.lua packaged default
 This is the full source version of Basalt, containing all available files.
 
 ```
-wget run https://basalt.madefor.cc/install.lua source full
+wget run https://pyroxenium.github.io/basalt-docs/install.lua source full
 ```
 
-- ### Packaged Full
+- ### Bundle Default
 
-This is the full packaged version of Basalt, containing all available files.
+This is the default bundle version of Basalt, containing essential files for a UI framework.
 
 ```
-wget run https://basalt.madefor.cc/install.lua packaged default
+wget run https://pyroxenium.github.io/basalt-docs/install.lua bundle default
+```
+
+- ### Bundle Full
+
+This is the full bundle version of Basalt, containing all available files.
+
+```
+wget run https://pyroxenium.github.io/basalt-docs/install.lua bundle full
 ```
 
 ## Update Basalt
@@ -62,7 +62,7 @@ The update command is used to ensure that your Basalt installation is up to date
 - If a file needs to be updated to match the latest version, Basalt will automatically perform the update.
 
 ::: info
-This [config](https://github.com/Pyroxenium/Basalt/blob/basalt2/config.json) file is used to check if a update needs to be done.
+This [config](https://github.com/Pyroxenium/basalt-docs/config.json) file is used to check if a update needs to be done.
 :::
 
 To execute the update command, use the following:
