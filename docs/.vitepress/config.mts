@@ -8,6 +8,8 @@ export default defineConfig({
   lastUpdated: true,
   base: "/basalt-docs/",
 
+  srcExclude: ["**.lua"],
+
   head: [
     //[
     //  'link',
