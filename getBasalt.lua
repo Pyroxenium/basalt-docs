@@ -33,10 +33,9 @@ end
 
 local function getConfig()
     if(config==nil)then
-        local github = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/"
+        local github = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/config.json"
         if(github~=nil)then
-            local url = github.."config.json"
-            local response = http.get(url)
+            local response = http.get(github)
             if(response==nil)then
                 error("Couldn't get the config file from github!")
             end

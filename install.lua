@@ -226,7 +226,7 @@ function installer.gui()
     if(fs.exists("basalt.lua"))then
         basalt = require("Basalt")
     else
-        basalt = load(http.get("https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/getBasalt.lua").readAll(), nil, "t", _ENV)()
+        basalt = load(http.get("https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/getBasalt.lua").readAll(), nil, "t", _ENV)()
     end
     basalt.requiredElement("button", "list", "frame", "input", "label", "scrollableFrame", "checkbox")
     basalt.requiredExtension("dynamicValues", "templates", "animations", "borders")
