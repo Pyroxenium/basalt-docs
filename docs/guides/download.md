@@ -11,7 +11,7 @@ The domain link will change once the new version of basalt is fully released!
 To download the Basalt UI using a CC shell command, use the following:
 
 ```
-wget run https://pyroxenium.github.io/basalt-docs/install.lua
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua
 ```
 
 This method provides a convenient way to modify Basalt according to your specific needs by utilizing a UI.
@@ -25,7 +25,7 @@ If you want to skip the UI and just download the essentials, here are some other
 This is the default source version of Basalt, containing essential files for a UI framework.
 
 ```
-wget run https://pyroxenium.github.io/basalt-docs/install.lua source default
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua source default
 ```
 
 - ### Source Full
@@ -33,7 +33,7 @@ wget run https://pyroxenium.github.io/basalt-docs/install.lua source default
 This is the full source version of Basalt, containing all available files.
 
 ```
-wget run https://pyroxenium.github.io/basalt-docs/install.lua source full
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua source full
 ```
 
 - ### Bundle Default
@@ -41,7 +41,7 @@ wget run https://pyroxenium.github.io/basalt-docs/install.lua source full
 This is the default bundle version of Basalt, containing essential files for a UI framework.
 
 ```
-wget run https://pyroxenium.github.io/basalt-docs/install.lua bundle default
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua bundle default
 ```
 
 - ### Bundle Full
@@ -49,7 +49,7 @@ wget run https://pyroxenium.github.io/basalt-docs/install.lua bundle default
 This is the full bundle version of Basalt, containing all available files.
 
 ```
-wget run https://pyroxenium.github.io/basalt-docs/install.lua bundle full
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua bundle full
 ```
 
 ## Update Basalt
@@ -68,5 +68,5 @@ This [config](https://github.com/Pyroxenium/basalt-docs/config.json) file is use
 To execute the update command, use the following:
 
 ```
-wget run https://basalt.madefor.cc/install.lua update
+wget run https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/install.lua update
 ```
