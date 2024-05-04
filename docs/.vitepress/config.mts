@@ -7,7 +7,6 @@ export default defineConfig({
   lang: 'en-US',
   lastUpdated: true,
   base: "/basalt-docs/",
-  srcExclude: ["**/getBasalt.lua"],
 
   head: [
     //[

@@ -13,7 +13,7 @@ function installer.getConfig(key)
     if(config~=nil)then
         return config[key]
     end
-    local file = http.get(githubPath.."config.json")
+    local file = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/config.json"
     if(file == nil) then
         error("Failed to download the Basalt config file")
     end
