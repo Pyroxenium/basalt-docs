@@ -35,6 +35,8 @@ Here is a list with all available methods for basalt.
 |[basalt.getTerm](#basalt-getterm)|term|Returns the term used by basalt.
 |[basalt.errorHandler](#basalt-errorhandler)|-|Handles all incoming errors.
 |[basalt.create](#basalt-create)|object|Can create a new element.
+|[basalt.requiredElement](#basalt-requiredelement)|-|Ensures that a specific element is available and loaded.
+|[basalt.requiredExtension](#basalt-requiredextension)|-|Ensures that a specific extension is available and loaded. 
 
 ## basalt.run <C content="basalt.run"/>
 
@@ -436,5 +438,35 @@ This is used to create new elements.
 local main = basalt.getMainFrame()
 local button = basalt.create("RandomId", nil, "Button")
 button:setParent(main)
+```
+:::
+
+## basalt.requiredElement <C content="basalt.requiredElement"/>
+
+Ensures that a specific element is available and loaded. If the element is not available, it will attempt to download it from github.
+
+### Parameters
+
+1. `string` The name of the required element
+2. `...` multiple entries possible
+
+::: details Click to see example
+```lua
+basalt.requiredElement("Button") -- If the element button doesn't exist it will try to download it from github.
+```
+:::
+
+## basalt.requiredExtension <C content="basalt.requiredExtension"/>
+
+Ensures that a specific extension is available and loaded. If the extension is not available, it will attempt to download it from github.
+
+### Parameters
+
+1. `string` The name of the required extension
+2. `...` multiple entries possible
+
+::: details Click to see example
+```lua
+basalt.requiredExtension("dynamicValues") -- If the extension dynamicValues doesn't exist it will try to download it from github.
 ```
 :::

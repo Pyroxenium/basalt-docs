@@ -18,6 +18,9 @@ List inherit from [VisualElement](visualelement) and [Element](element)
 |selectionBackground|color|The background color of the selected item in the list.
 |selectionForeground|color|The foreground/text color of the selected item in the list.
 |scrollIndex|number|The scrolling offset of the list.
+|spacing|number|The spacing of the list.
+|align|string|The alignment of items within the list (e.g., "left", "center", "right").
+|connectedLists|table|A collection of other lists that are connected to this list, enabling synchronized scrolling or selection changes between them.
 
 ## Methods
 
@@ -32,6 +35,8 @@ List inherit from [VisualElement](visualelement) and [Element](element)
 |[clear](#clear)|self|Removes all items from the list.
 |[updateColor](#updatecolor)|self|Updates the color of a item.
 |[getSelectionState](#getselectionstate)|boolean|Returns the selection state of the item at the given index.
+|[connect](#connect)|self|Connects other lists to this list, enabling synchronized scrolling or selection changes between them.
+|[disconnect](#disconnect)|self|Disconnects other lists from this list.
 
 ## Example
 
@@ -243,5 +248,59 @@ list:addItem("Item 1")
 list:addItem("Item 2")
 local selectionState = list:getSelectionState(1)
 basalt.debug(selectionState)
+```
+:::
+
+## connect <C content="connect"/>
+
+Connects other lists to this list, enabling synchronized scrolling or selection changes between them. Make sure the lists always have the same amount of entries.
+
+:::info
+Connecting a list to another list also connects the other list to this list (it goes in both directions).
+:::
+
+### Parameters
+
+1. `List` The other List element you want to connect.
+
+### Returns
+
+1. `self ` The List element itself
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list1 = main:addList()
+local list2 = main:addList():setPosition(16, 1):setWidth(4):setAlign("right")
+list1:connect(list2)
+
+list1:addItem("Apple")
+list2:addItem("12")
+list1:addItem("Banana")
+list2:addItem("8")
+```
+:::
+
+## disconnect <C content="disconnect"/>
+
+Disconnects a already connected list.
+
+### Parameters
+
+1. `List` The list you want to disconnect from this list.
+
+### Returns
+
+1. `self ` The List element itself
+
+::: details Click to see example
+```lua
+local main = basalt.getMainFrame()
+local list1 = main:addList()
+local list2 = main:addList():setPosition(16, 1):setWidth(4):setAlign("right")
+list1:connect(list2)
+
+-- some logic
+list1:disconnect(list2)
 ```
 :::

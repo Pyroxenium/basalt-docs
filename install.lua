@@ -298,18 +298,24 @@ Press "Next" to continue.
     end)
 
     Label(settings, 2, 12, "Bundle"):onClick(function(self, button)
-        drawHint(settingsFrame, "This will bundle all the files into one file. Making it easier to use Basalt on your computer.")
+        drawHint(settingsFrame, "This will bundle all the files into one file. Making it easier to use Basalt on your computer. The bundled version is meant to be used for production. If you're developing a program, you should not use the bundled version.")
+    end)
+
+    Label(settings, 2, 14, "Annotations"):onClick(function(self, button)
+        drawHint(settingsFrame, "This will download the annotations file. It will make the developement with basalt easier, as you can see the documentation of the functions in your editor. Doesn't work with the bundled installation.")
     end)
 
     local path = Input(settings, 15, 4, "{parent.w - 21}", 1, "{self.focused ? black : lightGray}", "{self.focused ? white : black}", installer.getConfig("defaultSettings").path.default)
 
     local cache = Checkbox(settings, "{parent.w - 7}", 6, colors.lightGray, colors.black, false)
 
-    local autoUpdate = Checkbox(settings, "{parent.w - 7}", 8, colors.lightGray, colors.black, false)
+    local autoUpdate = Checkbox(settings, "{parent.w - 7}", 8, colors.lightGray, colors.black, false):setEnabled(false)
 
     local minify = Checkbox(settings, "{parent.w - 7}", 10, colors.lightGray, colors.black, false)
 
     local bundle = Checkbox(settings, "{parent.w - 7}", 12, colors.lightGray, colors.black, false)
+
+    local annotations = Checkbox(settings, "{parent.w - 7}", 14, colors.lightGray, colors.black, false)
 
     Button(settingsFrame, 2, "{parent.h - self.h + 1}", 10, 1, colors.white, colors.black, "Back", function()
         basalt.switchFrame(installDescFrame)
@@ -396,10 +402,17 @@ Press "Next" to continue.
         basalt.switchFrame(loggingFrame)
         basalt.thread(function()
             installer.install(eleList:getSelectedItems(), extList:getSelectedItems())
+            local projPath = path:getValue()
             if(minify:getChecked())then
-                log("Minifying files...")
-                installer.minifyProject(path:getValue())
-                log("Minifying complete!")
+                installer.minifyProject(projPath)
+            end
+            if(bundle:getChecked())then
+                installer.bundleProject(projPath)
+                fs.delete(projPath)
+            end
+
+            if(annotations:getChecked())and not(bundle:getChecked())then
+                downloadFile(fs.combine(projPath, "annotations.lua"), "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/bundle.lua", "Annotations")
             end
 
             backBtn:setVisible(false)
@@ -446,8 +459,19 @@ end
 
 if(args[1]=="source")then
     installer.install()
-elseif(args[1]=="package")then
+    if(args[2]=="true")then
+        installer.minifyProject(installer.getConfig("defaultSettings").path.default)
+    end
+elseif(args[1]=="bundled")then
     installer.install()
+    if(args[2]=="true")then
+        installer.minifyProject(installer.getConfig("defaultSettings").path.default)
+    end
+    installer.bundleProject(installer.getConfig("defaultSettings").path.default)
+elseif(args[1]=="minify")then
+    installer.minifyProject(args[2])
+elseif(args[1]=="bundle")then
+    installer.bundleProject(args[2] or "basalt")
 else
     installer.gui()
 end

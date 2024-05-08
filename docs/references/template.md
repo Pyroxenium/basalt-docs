@@ -41,12 +41,12 @@ basalt.addTemplate({
 Templates can be loaded from JSON-formatted files using the `basalt.loadTemplate()` function.
 
 ```lua
-basalt.loadTemplate("myTemplate", "path/to/template.json")
+basalt.loadTemplate("path/to/template.json")
 ```
 
 ### Customizing Colors
 
-In addition to setting default property values for UI elements, templates in Basalt also allow you to define custom colors for use throughout your interface. The `colors` section in a template JSON or Lua table enables you to specify custom color values that can be referenced by name in the template.
+In addition to setting default property values for UI elements, templates also allow you to define custom colors for use throughout your interface. The `colors` section in a template JSON or Lua table enables you to specify custom color values that can be referenced by name in the template.
 
 ```json
 {
