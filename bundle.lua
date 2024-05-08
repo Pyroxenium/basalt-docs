@@ -90,7 +90,7 @@ file.write(content:gsub("\t", " "):gsub("\n", " "))
 file.close()
 end
 
-if(args~=nil)then
+if(#args>=1)then
     print("Bundling...")
     bundleProject(args[1], args[2] or "main", args[3] or "basalt.lua", args[4] or false)
     print("Done!")
