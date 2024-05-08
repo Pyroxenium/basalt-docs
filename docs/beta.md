@@ -4,6 +4,8 @@ Welcome to the Basalt 2 Beta! This page serves as a temporary hub for informatio
 
 The beta phase will last around 1 month, longer if it's necessary. While the beta phase is active, both, basalt 1 and basalt 2 will exist. After the Beta phase is done, and i feel like basalt 2 is polished enough, i'd like to archive basalt 1 and make basalt 2 the new default. Don't worry i'll try to keep the old docs alive.
 
+You can download Basalt [here](guides/download), and [here](guides/getting-started) is a link to the getting-started page. The API can be found [here](references/main).
+
 ## What's new?
 
 Basalt 2 represents a significant evolution from its predecessor. Here are some of the key improvements and features:
