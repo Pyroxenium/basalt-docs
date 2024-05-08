@@ -7,7 +7,6 @@
             "Checkbox": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Checkbox.lua", "The checkbox element is a element which can be checked or unchecked."],
             "Container": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Container.lua", "The container element, this is the parent of all containers (frames, flexboxes, etc.)"],
             "Dropdown": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Dropdown.lua", "The dropdown element can be opened and closed. It contains clickable items."],
-            "Flexbox": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Flexbox.lua", "The flexbox element can contain other elements. It has a automatic layout system."],
             "Frame": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Frame.lua", "The frame element can contain other elements."],
             "Image": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Image.lua", "The image element display images."],
             "Input": [1, "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/Basalt/elements/Input.lua", "The input element is a element which can be typed in."],

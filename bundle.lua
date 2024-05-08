@@ -1,11 +1,7 @@
 local args = {...} -- example: bundle basalt main basalt.lua
-local mainFolder = args[1] or "basalt" -- the project folder to bundle
-local mainFile = args[2] or "main" -- the main file to run (without .lua)
-local fileName = args[3] or "basalt.lua" -- the output file name (with .lua)
-local minify = args[4] or false -- the output file name (with .lua)
 local availableFiles = {}
 
-local packageUrl = "https://basalt.madefor.cc/packager.lua"
+local minifyURL = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/minify.lua"
 
 local content = [[local bundled = true
 local bundled_basaltContent = {}
@@ -43,9 +39,8 @@ require = function(name)
 end
 ]]
 
-print("Bundling...")
+local function bundleProject(mainFolder, mainFile, fileName, minify)
 local function generateSingleFile(folder)
-    print("Bundling "..folder)
     local newFolder = {}
     for k,file in pairs(fs.list(folder)) do
         if fs.isDir(fs.combine(folder, file)) then
@@ -57,7 +52,6 @@ local function generateSingleFile(folder)
             table.insert(newFolder, file)
             local fName = file:gsub(".lua", "")
             content = content .. "\nbundled_basaltContent[\"" .. fs.combine(folder, fName) .. "\"] = function(...)\n"..fileData.."\nend"
-            print("Bundling "..folder.."/"..file)
         end
     end
     availableFiles[folder] = newFolder
@@ -76,7 +70,7 @@ end
 content = content .. "\nreturn bundled_basaltContent['basalt/"..mainFile.."']()"
 
 if(minify)then
-    local minScript = http.get(packageUrl)
+    local minScript = http.get(minifyURL)
     print("Downloading minify script...")
     if(minScript)then
         local min = load(minScript.readAll(), nil, "t", _ENV)()
@@ -94,4 +88,12 @@ end
 local file = fs.open(fileName, "w")
 file.write(content:gsub("\t", " "):gsub("\n", " "))
 file.close()
-print("Done!")
+end
+
+if(args~=nil)then
+    print("Bundling...")
+    bundleProject(args[1], args[2] or "main", args[3] or "basalt.lua", args[4] or false)
+    print("Done!")
+end
+
+return bundleProject

@@ -1,6 +1,7 @@
 -- BASALT INSTALLER
 local githubPath = "https://raw.githubusercontent.com/Pyroxenium/Basalt/basalt2/"
-local packagerURL = "https://basalt.madefor.cc/packager.lua"
+local minifyURL = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/minify.lua"
+local bundleURL = "https://raw.githubusercontent.com/Pyroxenium/basalt-docs/main/bundle.lua"
 
 local installer = {}
 local args = {...}
@@ -40,28 +41,7 @@ local function log(msg)
     end
 end
 
-local function downloadFileMinified(path, url, desc)
-    local minify = installer.getPackager()
-    log("Downloading: "..(desc or url))
-    local file = http.get(url)   
-    if(file == nil) then
-        log("Failed to download: "..(desc or url))
-    else
-        local success, data = minify(file.readAll())
-        if(success)then
-            local f = fs.open(path, "w")
-            f.write(data)
-            f.close()
-            log("Successfully downloaded: "..(desc or url))
-        else
-            log("Failed to minify: "..(desc or url))
-        end
-
-    end
-end
-
 local function downloadFile(path, url, desc)
-    log("Downloading: "..(desc or url))
     local file = http.get(url)   
     if(file == nil) then
         log("Failed to download: "..(desc or url))
@@ -71,6 +51,48 @@ local function downloadFile(path, url, desc)
         f.close()
         log("Successfully downloaded: "..(desc or url))
     end
+end
+
+
+local minScript
+local function minify(folder)
+    if(minScript==nil)then
+        minScript = load(http.get(minifyURL).readAll())()
+    end
+    local files = fs.list(folder)
+    for _,file in pairs(files)do
+        if(not fs.isDir(fs.combine(folder, file)))then
+            if(file:sub(-4)==".lua")then
+                local f = fs.open(fs.combine(folder, file), "r")
+                local data = f.readAll()
+                f.close()
+                local success, minified = minScript(data)
+                if(success)then
+                    f = fs.open(fs.combine(folder, file), "w")
+                    f.write(minified:gsub("\t", " "):gsub("\n", " "))
+                    f.close()
+                    log("Successfully minified: "..file)
+                else
+                    log("Failed to minify: "..file)
+                end
+            end
+        else
+            minify(fs.combine(folder, file))
+        end
+    end
+end
+
+function installer.minifyProject(path)
+    log("Minifying project...")
+    minify(path)
+    log("Minifying complete!")
+end
+
+function installer.bundleProject(path)
+    log("Bundling project...")
+    local bundle = load(http.get(bundleURL).readAll())()
+    bundle(path, "main", "basalt.lua", false)
+    log("Bundling complete!")
 end
 
 function installer.createDirectories()
@@ -143,25 +165,14 @@ function installer.downloadLibraryFiles(packaged)
 end
 
 function installer.install(elements, extensions)
-    log("Installing Basalt...")
+    log("Downloading Basalt...")
     installer.createDirectories()
     installer.createSettings()
     installer.downloadCoreFiles()
     installer.downloadElementFiles(false, elements)
     installer.downloadExtensionFiles(false, extensions)
     installer.downloadLibraryFiles()
-    log("Installation complete!")
-end
-
-function installer.installPackaged(elements, extensions)
-    log("Installing Basalt...")
-    installer.createDirectories()
-    installer.createSettings()
-    installer.downloadCoreFiles(true)
-    installer.downloadElementFiles(true, elements)
-    installer.downloadExtensionFiles(true, extensions)
-    installer.downloadLibraryFiles(true)
-    log("Installation complete!")
+    log("Download complete!")
 end
 
 local function Button(frame, x, y, w, h, bg, fg, text, onClick, clickedBg, clickedFg)
@@ -279,11 +290,15 @@ Press "Next" to continue.
     end)
 
     Label(settings, 2, 8, "Auto Update:"):onClick(function(self, button)
-        drawHint(settingsFrame, "This will automatically update basalt whenever you start your program (and load basalt into your program).")
+        drawHint(settingsFrame, "This will automatically update basalt whenever you start your program (and load basalt into your program). Doesn't work with the bundled installation.")
     end)
 
-    Label(settings, 2, 10, "Packaged"):onClick(function(self, button)
-        drawHint(settingsFrame, "This will download the minified version of Basalt. Ot will make the installation faster, but the files will be harder to read. The Source Version contains comments and LLS annotations.")
+    Label(settings, 2, 10, "Minify"):onClick(function(self, button)
+        drawHint(settingsFrame, "This will minify all the files to reduce the file size. But it will make the files harder to read. Also unexpected errors will be harder to understand.")
+    end)
+
+    Label(settings, 2, 12, "Bundle"):onClick(function(self, button)
+        drawHint(settingsFrame, "This will bundle all the files into one file. Making it easier to use Basalt on your computer.")
     end)
 
     local path = Input(settings, 15, 4, "{parent.w - 21}", 1, "{self.focused ? black : lightGray}", "{self.focused ? white : black}", installer.getConfig("defaultSettings").path.default)
@@ -292,7 +307,9 @@ Press "Next" to continue.
 
     local autoUpdate = Checkbox(settings, "{parent.w - 7}", 8, colors.lightGray, colors.black, false)
 
-    local packaged = Checkbox(settings, "{parent.w - 7}", 10, colors.lightGray, colors.black, false)
+    local minify = Checkbox(settings, "{parent.w - 7}", 10, colors.lightGray, colors.black, false)
+
+    local bundle = Checkbox(settings, "{parent.w - 7}", 12, colors.lightGray, colors.black, false)
 
     Button(settingsFrame, 2, "{parent.h - self.h + 1}", 10, 1, colors.white, colors.black, "Back", function()
         basalt.switchFrame(installDescFrame)
@@ -378,11 +395,13 @@ Press "Next" to continue.
         loggingList:clear()
         basalt.switchFrame(loggingFrame)
         basalt.thread(function()
-            if(packaged:getChecked())then
-                installer.installPackaged(eleList:getSelectedItems(), extList:getSelectedItems())
-            else
-                installer.install(eleList:getSelectedItems(), extList:getSelectedItems())
+            installer.install(eleList:getSelectedItems(), extList:getSelectedItems())
+            if(minify:getChecked())then
+                log("Minifying files...")
+                installer.minifyProject(path:getValue())
+                log("Minifying complete!")
             end
+
             backBtn:setVisible(false)
             doneBtn:setVisible(true)
         end)

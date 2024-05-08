@@ -112,7 +112,6 @@ export default defineConfig({
               {text: 'Borders', link: 'references/borders'},
               {text: 'Better Backgrounds', link: 'references/betterbackgrounds'},
               {text: 'Shadows', link: 'references/shadows'},
-              {text: 'Scrollbars', link: 'references/scrollbars'},
               {text: 'Debug', link: 'references/debug'},
               {text: 'XML', link: 'references/xml'},
             ]
