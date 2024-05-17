@@ -33,7 +33,7 @@ local basalt = require("basalt")
 local main = basalt.getMainFrame()
 
 -- Load UI elements from XML file
-main:loadXML("ui_layout.xml")
+main:loadXMLFile("ui_layout.xml")
 
 basalt.run()
 ```
